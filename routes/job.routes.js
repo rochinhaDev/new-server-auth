@@ -144,7 +144,7 @@ jobRouter.post("/apply/:id_job", isAuth, async (req, res) => {
 
     // adicionar o job na array de history_jobs do usuário
     await UserModel.findByIdAndUpdate(id_user, {
-      $push: { history_jobs: id_job },
+      $push: { history: id_job },
     });
 
     return res
